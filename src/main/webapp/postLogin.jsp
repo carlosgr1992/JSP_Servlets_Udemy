@@ -10,10 +10,21 @@
 
 	<h1>POST LOGIN.JSP</h1>
 
+	<h2>Sesion</h2>
 	<%
-	out.println("Tu usuario es " + request.getParameter("usuario"));
-	out.println("Tu contraseña es " + request.getParameter("contrasena"));
+	out.println("usuario: " + session.getAttribute("usuario") + " contraseña " + session.getAttribute("contrasena"));
 	%>
-
+	<br/>
+	<h3>Request</h3>
+	<%
+	out.println("usuario: " + request.getParameter("usuario") + " contraseña: " + request.getParameter("contrasena"));
+	%>
+	<br/>
+	<h4>Context</h4>
+	<%
+	out.println("usuario: " + application.getAttribute("usuario") + " contraseña " + application.getAttribute("contrasena"));
+	
+	%>
+	
 </body>
 </html>
