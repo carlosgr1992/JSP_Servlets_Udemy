@@ -10,7 +10,7 @@
 
 	<h1>Login.jsp</h1>
 	
-		<form action="" method="GET">
+		<form action="Servlet" method="POST">
 		<table>
 			<tr>
 				<td>Nombre de usuario: </td>

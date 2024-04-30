@@ -27,11 +27,9 @@ public class Servlet extends HttpServlet {
 				getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
 			}else if(accion.equals("inicio")) {
 				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
-			}else if(accion.equals("iniciarSesion")) {
-				getServletContext().getRequestDispatcher("/postLogin.jsp").forward(request, response);
 			}
 			
-		}else {
+				}else {
 			getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
 		}
 		
@@ -40,7 +38,15 @@ public class Servlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
+		String accion = request.getParameter("accion");
+		
+		if(accion.equals("iniciarSesion")) {
+				//getServletContext().getRequestDispatcher("/postLogin.jsp").forward(request, response);
+				System.out.println("Tu nombre es " + request.getParameter("usuario") + " y tu contraseña es " + request.getParameter("contrasena"));
+			}else {
+				getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+			}
+			
 
 	}
 
